@@ -13,12 +13,23 @@ describe NYTimes do
       expect(@NYTio.retrieve_data).to be_kind_of(Hash)
     end
 
-    it "should return an OK status" do 
+    it "should return an OK status be string" do 
       expect(@NYTio.retrieve_status).to be_kind_of(String)
     end
 
     it "should return an OK message" do 
-      expect(@NYTio.retrieve_status).to { should == "OK" }
+      expect(@NYTio.retrieve_status).to match('OK')
     end
+
+    it "should return number of results as an integer" do
+      expect(@NYTio.retrieve_results).to be_kind_of(Integer)
+      p 
+    end
+
+    it "should return an array" do 
+      p @NYTio.retrieve_results_url
+      # expect(@NYTio.retrieve_results_url).to be_kind_of(Array)
+    end
+
   end
 end

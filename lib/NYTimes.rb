@@ -1,4 +1,4 @@
-require_relative 'services/CurrentPopular'
+require_relative 'services/CurrentPopularMovies'
 
 class NYTimes
   #superclass
