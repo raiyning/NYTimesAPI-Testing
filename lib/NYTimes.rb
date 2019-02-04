@@ -1,8 +1,6 @@
-require_relative 'services/currentweather'
+require_relative 'services/CurrentPopular'
 
-
-
-class 
+class NYTimes
   #superclass
   def current_popular
     CurrentPopular.new
