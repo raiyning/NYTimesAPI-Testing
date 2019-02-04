@@ -5,10 +5,12 @@ Dotenv.load('.env')
 
 class CurrentPopularMovies
   include HTTParty
-  base_uri 'https://api.nytimes.com/svc/mostpopular/v2'
 
-  def retrieve_current(api_key, title)
-    @articles = JSON.parse(self.class.get("reviews/search.json?query=#{title}&api-key=#{api_key}").body)
+  base_uri 'https://api.nytimes.com/svc/movies/v2/reviews'
+
+  def movie_review_request_by_title(title)
+    api_key = ENV['API_KEY']
+    @movie_review_data = JSON.parse(self.class.get("/search.json?query=#{title}&api-key=#{api_key}").body)
   end
 
   def retrieve_result
@@ -31,6 +33,7 @@ class CurrentPopularMovies
     retrieve_result['num_results']
   end
 
+  # creating loops to iterate through every hash so code is kept DRY 
   def retrieve_result_array
     retrieve_result['results']
   end
@@ -163,6 +166,3 @@ class CurrentPopularMovies
 
 end
 
-# test = CurrentPopular.new
-# p test.retrieve_current(ENV['API_KEY'],7)
-# # p test.retrieve_results_url
