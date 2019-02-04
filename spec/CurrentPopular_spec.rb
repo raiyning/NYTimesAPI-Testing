@@ -7,7 +7,8 @@ describe NYTimes do
   context 'requesting data from the movie review service works correctly' do 
     before(:all) do 
       @movies_reviews_service = NYTimes.new.current_popular
-      @movies_reviews_service.movie_review_request_by_title('pokemon')
+      @random_movie = RandomMoviesGenerator.new.get_movie_by_name
+      @movies_reviews_service.movie_review_request_by_title(@random_movie)
     end 
 
     it 'should retrieve the results in as a hash' do 
