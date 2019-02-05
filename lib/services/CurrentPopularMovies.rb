@@ -33,13 +33,11 @@ class CurrentPopularMovies
     retrieve_result['num_results']
   end
 
-  # creating loops to iterate through every hash so code is kept DRY 
   def retrieve_result_array
     retrieve_result['results']
   end
 
   def retrieve_all_display_title
-
     display_title = []
     retrieve_result_array.each do |title|
       display_title << title['display_title']
@@ -48,7 +46,6 @@ class CurrentPopularMovies
   end
 
   def retrieve_all_mpaa_rating
-
     mpaa_rating = []
     retrieve_result_array.each do |result|
       mpaa_rating << result['mpaa_rating']
@@ -57,7 +54,6 @@ class CurrentPopularMovies
   end
 
   def retrieve_all_critics_pick
-
     critics_pick = []
     retrieve_result_array.each do |result|
       critics_pick << result['critics_pick']
@@ -66,7 +62,6 @@ class CurrentPopularMovies
   end
 
   def retrieve_all_byline
-
     byline = []
     retrieve_result_array.each do |result|
       byline << result['byline']
@@ -75,7 +70,6 @@ class CurrentPopularMovies
   end
 
   def retrieve_all_headline
-
     headline = []
     retrieve_result_array.each do |result|
       headline << result['headline']
@@ -84,7 +78,6 @@ class CurrentPopularMovies
   end
 
   def retrieve_all_summary_short
-
     summary_short = []
     retrieve_result_array.each do |result|
       summary_short << result['summary_short']
@@ -93,7 +86,6 @@ class CurrentPopularMovies
   end
 
   def retrieve_all_publication_date
-
     publication_date = []
     retrieve_result_array.each do |result|
       publication_date << result['publication_date']
@@ -102,7 +94,6 @@ class CurrentPopularMovies
   end
 
   def retrieve_all_opening_date
-
     opening_date = []
     retrieve_result_array.each do |result|
       opening_date << result['opening_date']
@@ -111,7 +102,6 @@ class CurrentPopularMovies
   end
 
   def retrieve_all_date_updated
-
     date_updated = []
     retrieve_result_array.each do |result|
       date_updated << result['date_updated']
@@ -120,7 +110,6 @@ class CurrentPopularMovies
   end
 
   def retrieve_all_link
-
     link = []
     retrieve_result_array.each do |result|
       link << result['link']
@@ -129,7 +118,6 @@ class CurrentPopularMovies
   end
 
   def retrieve_all_link_type
-
     link_type = []
     retrieve_result_array.each do |result|
       link_type << result['link']['type']
@@ -138,7 +126,6 @@ class CurrentPopularMovies
   end
 
   def retrieve_all_link_url
-
     link_url = []
     retrieve_result_array.each do |result|
       link_url << result['link']['url']
@@ -147,7 +134,6 @@ class CurrentPopularMovies
   end
 
   def retrieve_all_link_suggested_link_text
-
     suggested_link_text = []
     retrieve_result_array.each do |result|
       suggested_link_text << result['link']['suggested_link_text']
@@ -156,7 +142,6 @@ class CurrentPopularMovies
   end
 
   def retrieve_all_multimedia
-
     multimedia = []
     retrieve_result_array.each do |result|
       multimedia << result['multimedia']
